@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(3, 3, 93);
+            overflow: hidden;
+            /* position: relative; */
+        }
+      
+       #sun{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: yellow;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+       } 
+
+       .planet, .satellite{
+        z-index: 2;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+       }
+       #earth{
+        width: 23px;
+        height: 23px;
+        background-color: rgb(47, 40, 251);
+        z-index: 2;
+    
+       }
+       #moon{
+        width: 10px;
+        height: 10px;
+        background-color: rgb(234, 233, 236);
+      
+    
+       }
+       #mercury{
+        width: 13px;
+        height: 13px;
+        background-color: grey;
+      
+       }
+       #venera{
+        width: 18px;
+        height: 18px;
+        background-color: rgb(253, 190, 0);
+        
+       }
+       #mars{
+        width: 28px;
+        height: 28px;
+        background-color: rgb(253, 105, 0);
+        
+       }
+       #jupiter{
+        width: 37px;
+        height: 37px;
+        background-color: rgb(185, 113, 62);
+        
+       }
+       #saturn{
+        width: 36px;
+        height: 36px;
+        background-color: rgb(185, 166, 62);
+        
+       }
+       #uran{
+        width: 28px;
+        height: 28px;
+        background-color: rgb(79, 114, 203);
+       
+       }
+       #neptun{
+        width: 28px;
+        height: 28px;
+        background-color: rgb(0, 225, 255);
+     
+       }
+
+       @keyframes opacity-animation{
+        0%{
+            opacity: 20%;
+        }
+        100%{
+            opacity: 100%;
+        }
+       }
+       .star{
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        opacity: 0;
+        animation-name: opacity-animation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+
+       }
+
+       .meteor{
+        z-index: 3;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        height: 4px;
+        width: 4px;
+        transform: rotate(40deg);
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: -10px 0px 40px 20px rgb(214, 213, 213);
+        transition-duration: 5s;
+        transition-timing-function: linear;
+       }
+
+       .meteor-action{
+        top: calc(100% + 50px);
+        left:calc(100% + 50px);
+       }
+        
+       .planet_list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        margin-top: 130px;
+        }
+
+        .planet1 {
+          display: flex;
+          align-items: center;
+          
+        }
+        .planet1 .sun1{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: yellow;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 .mercury1{
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: grey;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 .venera1{
+        width: 18px;
+        height: 18px;
+        background-color: rgb(253, 190, 0);
+        border-radius: 50%;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 .earth1{
+        width: 23px;
+        height: 23px;
+        background-color: rgb(47, 40, 251);
+        border-radius: 50%;
+        margin-right: 10px;
+        z-index: 2;
+        }
+        .planet1 .mars1{
+        width: 28px;
+        height: 28px;
+        background-color: rgb(253, 105, 0);
+        border-radius: 50%;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 .jupiter1{
+        width: 37px;
+        height: 37px;
+        background-color: rgb(185, 113, 62);
+        border-radius: 50%;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 .saturn1{
+        width: 36px;
+        height: 36px;
+        background-color: rgb(185, 166, 62);
+        border-radius: 50%;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 .uran1{
+        width: 28px;
+        height: 28px;
+        background-color: rgb(79, 114, 203);
+        border-radius: 50%;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 .neptun1{
+        width: 28px;
+        height: 28px;
+        background-color: rgb(0, 225, 255);
+        border-radius: 50%;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 .moon1{
+        width: 10px;
+        height: 10px;
+        background-color: rgb(234, 233, 236);
+        border-radius: 50%;
+        margin-right: 10px;
+        z-index: 2;
+
+        }
+        .planet1 h4{
+            color: rgb(235, 232, 232);
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+     
+     
+    </style>
+</head>
+<body>
+    <div id="sun"></div>
+    <div id="earth" class ="planet"></div>
+    <div id="moon" class="satellite"></div>
+    <div id="mercury" class ="planet"></div>
+    <div id="venera" class ="planet"></div>
+    <div id="mars" class ="planet"></div>
+    <div id="jupiter" class ="planet"></div>
+    <div id="saturn" class ="planet"></div>
+    <div id="uran" class ="planet"></div>
+    <div id="neptun" class ="planet"></div>
+    <div class="meteor"></div>
+    <div class="planet_list">
+        <div class="planet1">
+          <span class="sun1"></span>
+          <h4>Sun</h4>
+        </div>
+        <div class="planet1">
+          <div class="mercury1"></div>
+          <h4>Mercury</h4>
+        </div>
+        <div class="planet1">
+          <div class="venera1"></div>
+          <h4>Venera</h4>
+        </div>
+        <div class="planet1">
+            <div class="earth1"></div>
+            <h4>Earth</h4>
+          </div>
+          <div class="planet1">
+            <div class="moon1"></div>
+            <h4>Moon</h4>
+          </div>
+          <div class="planet1">
+            <div class="mars1"></div>
+            <h4>Mars</h4>
+          </div>
+          <div class="planet1">
+            <div class="jupiter1"></div>
+            <h4>Jupiter</h4>
+          </div>
+          <div class="planet1">
+            <div class="saturn1"></div>
+            <h4>Saturn</h4>
+          </div>
+          <div class="planet1">
+            <div class="uran1"></div>
+            <h4>Uran</h4>
+          </div>
+          <div class="planet1">
+            <div class="neptun1"></div>
+            <h4>Neptun</h4>
+          </div>
+       
+      </div>
+      
+    <script src="app.js"></script>
+</body>
+</html>
